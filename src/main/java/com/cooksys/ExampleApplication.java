@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.cooksys.model.AppUser;
+
 @SpringBootApplication
 @Configuration
 @RestController
@@ -18,9 +20,4 @@ public class ExampleApplication {
 		SpringApplication.run(ExampleApplication.class, args);
 	}
 		
-	@RequestMapping("/user")
-	String helloSpring()
-	{
-		return "Michael Boren";
-	}
 }
