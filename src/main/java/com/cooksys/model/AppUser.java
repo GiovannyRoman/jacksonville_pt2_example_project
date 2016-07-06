@@ -1,6 +1,7 @@
 package com.cooksys.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "AppUser")
@@ -22,6 +23,9 @@ public class AppUser {
 	@ManyToOne
 	@JoinColumn(name="Role")
 	private AppRole role;
+
+	@ManyToMany(mappedBy = "members")
+	private List<AppGroup> groups;
 
 	public AppUser() {
 
@@ -78,5 +82,13 @@ public class AppUser {
 
 	public void setRole(AppRole role) {
 		this.role = role;
+	}
+
+	public List<AppGroup> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(List<AppGroup> groups) {
+		this.groups = groups;
 	}
 }

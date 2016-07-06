@@ -17,19 +17,11 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
-	
-	@RequestMapping("singleName")
-	public String helloSpring()
-	{
-		return "Michael Boren";
-	}
 
 	@RequestMapping("/{id}")
 	public AppUser user(@PathVariable("id") long id) {
 		return userRepository.get(id);
 	}
-
-
 
 	@RequestMapping("allUsers")
 	public List<AppUser> allUsers() {
