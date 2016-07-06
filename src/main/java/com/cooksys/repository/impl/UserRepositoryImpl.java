@@ -1,6 +1,7 @@
-package com.cooksys.repository;
+package com.cooksys.repository.impl;
 
 import com.cooksys.model.AppUser;
+import com.cooksys.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

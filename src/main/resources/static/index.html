@@ -18,12 +18,14 @@
         <td>Name</td>
         <td>City</td>
         <td>State</td>
+        <td>Role</td>
     </tr>
 
     <tr ng-repeat="user in users">
         <td>{{user.name}}</td>
         <td>{{user.city}}</td>
         <td>{{user.state}}</td>
+        <td>{{user.role.role}}</td>
     </tr>
 
 </table>

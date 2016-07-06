@@ -10,23 +10,28 @@ public class AppUser {
 	@GeneratedValue
 	private long id;
 
-	@Column(name = "NAME")
+	@Column(name = "Name")
 	private String name;
 
-	@Column(name = "CITY")
+	@Column(name = "City")
 	private String city;
 
-	@Column(name = "STATE")
+	@Column(name = "State")
 	private String state;
+
+	@ManyToOne
+	@JoinColumn(name="Role")
+	private AppRole role;
 
 	public AppUser() {
 
 	}
 	
-	public AppUser(String name, String city, String state) {
+	public AppUser(String name, String city, String state, AppRole role) {
 		this.name = name;
 		this.city = city;
 		this.state = state;
+		this.role = role;
 	}
 	
 
@@ -59,4 +64,19 @@ public class AppUser {
 		this.state = state;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public AppRole getRole() {
+		return role;
+	}
+
+	public void setRole(AppRole role) {
+		this.role = role;
+	}
 }
