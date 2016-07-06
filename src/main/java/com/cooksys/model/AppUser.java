@@ -1,10 +1,27 @@
 package com.cooksys.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "AppUser")
 public class AppUser {
-	
+
+	@Id
+	@GeneratedValue
+	private long id;
+
+	@Column(name = "NAME")
 	private String name;
+
+	@Column(name = "CITY")
 	private String city;
+
+	@Column(name = "STATE")
 	private String state;
+
+	public AppUser() {
+
+	}
 	
 	public AppUser(String name, String city, String state) {
 		this.name = name;

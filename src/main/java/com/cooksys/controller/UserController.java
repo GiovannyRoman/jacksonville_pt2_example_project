@@ -1,7 +1,9 @@
 package com.cooksys.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cooksys.model.AppUser;
@@ -14,22 +16,23 @@ import java.util.List;
 public class UserController {
 
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 	
 	@RequestMapping("singleName")
-	String helloSpring()
+	public String helloSpring()
 	{
 		return "Michael Boren";
 	}
-	
-	@RequestMapping("userObj")
-	AppUser getUser()
-	{
-		return userRepository.get();
+
+	@RequestMapping("/{id}")
+	public AppUser user(@PathVariable("id") long id) {
+		return userRepository.get(id);
 	}
 
+
+
 	@RequestMapping("allUsers")
-	List<AppUser> allUsers() {
+	public List<AppUser> allUsers() {
 		return userRepository.getAll();
 	}
 
