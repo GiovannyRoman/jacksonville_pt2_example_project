@@ -1,13 +1,14 @@
 package com.cooksys.repository;
 
-import com.cooksys.model.AppUser;
-
 import java.util.List;
+
+import com.cooksys.entity.AppUser;
+import com.cooksys.model.GetAllUsersResponse;
 
 public interface UserRepository {
 
 
 	AppUser get(long id);
 
-	List<AppUser> getAll();
+	List<GetAllUsersResponse> getAll();
 }

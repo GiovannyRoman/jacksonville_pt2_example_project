@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.cooksys.model.AppUser;
+import com.cooksys.entity.AppUser;
 
 @SpringBootApplication
 @Configuration

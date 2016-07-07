@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cooksys.model.AppUser;
+import com.cooksys.entity.AppUser;
+import com.cooksys.model.GetAllUsersResponse;
 import com.cooksys.repository.UserRepository;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class UserController {
 	}
 
 	@RequestMapping("allUsers")
-	public List<AppUser> allUsers() {
+	public List<GetAllUsersResponse> allUsers() {
 		return userRepository.getAll();
 	}
 

@@ -1,12 +1,15 @@
 package com.cooksys.repository.impl;
 
-import com.cooksys.model.AppUser;
-import com.cooksys.repository.UserRepository;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import java.util.List;
+import com.cooksys.entity.AppUser;
+import com.cooksys.model.GetAllUsersResponse;
+import com.cooksys.repository.UserRepository;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
@@ -22,8 +25,8 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public List<AppUser> getAll() {
-        return em.createQuery("select user from AppUser user", AppUser.class).getResultList();
+    public List<GetAllUsersResponse> getAll() {
+        return em.createQuery("select new com.cooksys.model.GetAllUsersResponse(user.id, user.name) from AppUser user", GetAllUsersResponse.class).getResultList();
     }
 
 }
