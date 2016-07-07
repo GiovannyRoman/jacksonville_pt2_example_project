@@ -1,5 +1,7 @@
 package com.cooksys.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,10 +18,12 @@ public class AppGroup {
 
     @ManyToOne
     @JoinColumn(name = "Owner")
+    @JsonIgnore
     private AppUser owner;
 
     @ManyToMany
     @JoinTable(name = "GroupUsers")
+    @JsonIgnore
     private List<AppUser> members;
 
     public long getId() {
