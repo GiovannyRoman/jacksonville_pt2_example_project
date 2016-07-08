@@ -7,4 +7,11 @@ angular.module('app').controller('UserDetailController', ['UserDetailService', '
 		ctrl.user = result.data;
 	});
 	
+	ctrl.availableRoles = ['admin', 'user', 'guest'];
+	
+	ctrl.roleSelected = function(role)
+	{
+		ctrl.user.role.role = role;
+	}
+	
 }]);
