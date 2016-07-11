@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.cooksys.model.AppUser;
 
 @SpringBootApplication
-@RestController
 public class ExampleApplication {
 	
 	public static void main(String[] args) {
