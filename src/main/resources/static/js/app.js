@@ -2,6 +2,7 @@
 var app = angular.module('app', []);
 
 app.controller('ExampleController', function ExampleController($scope) {
+	
     $scope.users = [
         {
             name: 'Michael Boren',
@@ -17,4 +18,10 @@ app.controller('ExampleController', function ExampleController($scope) {
             state: 'Alaska'
         }
     ];
+    
+    $scope.myCustomFunction = () =>
+    {
+    	return "THIS FUNCTION HAS BEEN EXECUTED";
+    }
+    
 });
