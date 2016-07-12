@@ -15,14 +15,14 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public AppUser get(long id) {
-        return em.createQuery("select user from AppUser user where user.id = :id", AppUser.class)
+        return em.createQuery("from AppUser where id = :id", AppUser.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }
 
     @Override
     public List<AppUser> getAll() {
-        return em.createQuery("select user from AppUser user", AppUser.class).getResultList();
+        return em.createQuery("from AppUser", AppUser.class).getResultList();
     }
 
 }
