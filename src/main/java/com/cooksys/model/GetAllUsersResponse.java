@@ -1,7 +1,9 @@
 package com.cooksys.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.cooksys.entity.AppUser;
 
 public class GetAllUsersResponse {
 	
@@ -30,5 +32,12 @@ public class GetAllUsersResponse {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	public static List<GetAllUsersResponse> list(List<AppUser> list)
+	{
+		ArrayList<GetAllUsersResponse> result = new ArrayList<>();
+		for(AppUser user : list)
+			result.add(new GetAllUsersResponse(user.getId(), user.getName()));
+		return result;
+	}
 }

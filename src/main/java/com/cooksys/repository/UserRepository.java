@@ -7,7 +7,6 @@ import com.cooksys.model.GetAllUsersResponse;
 
 public interface UserRepository {
 
-
 	AppUser get(long id);
 
 	List<GetAllUsersResponse> getAll();

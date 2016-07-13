@@ -13,5 +13,3 @@ insert into app_user (name, state, city, role) values ('Dave Chris', 'Anchorage'
 insert into app_group (name, owner) values ('CoolGroup', 2);
 insert into group_users (groups_id, members_id) values (1, 2);
 insert into group_users (groups_id, members_id) values (1, 3);
-
-
